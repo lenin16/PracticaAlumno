@@ -180,6 +180,7 @@
     <Compile Include="Models\Alumno.cs">
       <DependentUpon>Model_Alumnos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AlumnoCE.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model_Alumnos.Context.cs">

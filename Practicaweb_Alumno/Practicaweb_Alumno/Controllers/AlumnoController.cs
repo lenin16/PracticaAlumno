@@ -24,9 +24,28 @@ namespace Practicaweb_Alumno.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]  /* sirve para seguridad que no entren de otros formularios,toquen que verifica que el formulario que se esta enviando pertenece aca */
         public ActionResult Agregar(Alumno a)
         {
-            return View();
+            if (!ModelState.IsValid)
+                return View();
+            try
+            {
+                using (BD_AlumnoEntities db = new BD_AlumnoEntities())
+                {
+                    a.FechaRegistro = DateTime.Now;
+                    db.Alumno.Add(a);
+                    db.SaveChanges();
+                    return RedirectToAction("Inicio");
+                }
+            }
+            catch (Exception ep)
+            {
+
+                ModelState.AddModelError("","Error al agregar el alumno - "+ ep.Message);
+                return View();
+            }
+                        
         }
     }
 }
