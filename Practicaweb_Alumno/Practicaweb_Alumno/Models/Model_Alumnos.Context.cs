@@ -26,5 +26,6 @@ namespace Practicaweb_Alumno.Models
         }
     
         public virtual DbSet<Alumno> Alumno { get; set; }
+        public virtual DbSet<Ciudad> Ciudad { get; set; }
     }
 }

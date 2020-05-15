@@ -20,7 +20,13 @@ namespace Practicaweb_Alumno.Models
         public int Edad { get; set; }
         [Required]
         [Display(Name = "Sexo del Alumno")]
-        public string Sexo { get; set; }        
+        public string Sexo { get; set; }
+        [Required]
+        [Display(Name = "Ciudad")]
+        public int CodCiudad { get; set; }
+        public string Nombreciudad { get; set; }
+        public string NombreCompleto { get { return Nombres + " " + Apellidos; } }
+        public System.DateTime FechaRegistro { get; set; }
     }
 
     [MetadataType(typeof(AlumnoCE))]
@@ -28,5 +34,6 @@ namespace Practicaweb_Alumno.Models
     public partial class Alumno
     {       
         public string NombreCompleto { get { return Nombres + " " + Apellidos; } }
+        public string Nombreciudad { get; set; }
     }
 }

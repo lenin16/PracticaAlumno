@@ -181,6 +181,9 @@
       <DependentUpon>Model_Alumnos.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AlumnoCE.cs" />
+    <Compile Include="Models\Ciudad.cs">
+      <DependentUpon>Model_Alumnos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Model_Alumnos.Context.cs">
@@ -275,6 +278,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Alumno\Inicio.cshtml" />
     <Content Include="Views\Alumno\Agregar.cshtml" />
+    <Content Include="Views\Alumno\Editar.cshtml" />
+    <Content Include="Views\Alumno\Detalle_Alumno.cshtml" />
+    <Content Include="Views\Alumno\ListaCiudades.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

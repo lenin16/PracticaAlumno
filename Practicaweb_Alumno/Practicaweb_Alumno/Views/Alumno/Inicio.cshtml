@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Practicaweb_Alumno.Models.Alumno>
+﻿@model IEnumerable<Practicaweb_Alumno.Models.AlumnoCE>
 
 @{
     ViewBag.Title = "Lista de Alumnos";
@@ -22,6 +22,11 @@
         <th>
             Sexo
         </th>
+
+        <th>
+            Ciudad
+        </th>
+
         <th>
            Fecha
         </th>
@@ -51,16 +56,33 @@
               }
 
         </td>
+
+        <td>            
+            @*@Practicaweb_Alumno.Controllers.AlumnoController.NombreCiudad(item.CodCiudad)*@
+            @item.Nombreciudad
+        </td>
         <td>
             @*@Html.DisplayFor(modelItem => item.FechaRegistro)*@
             @item.FechaRegistro.ToShortDateString()
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("EditarAlumno", "Editar", new { id=item.Id }) |
+            @Html.ActionLink("Detalles", "Detalle_Alumno", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "EliminarAlumno", new { id=item.Id },new { @class="IdEliminar"})
         </td>
     </tr>
 }
 
 </table>
+
+@section scripts{
+  <script>
+      $(".IdEliminar").click(function (event) {
+          if(!confirm('Estas seguro de eliminar alumno ?'))
+          {
+              event.preventDefault();
+          }
+      })
+
+    </script>  
+  }
