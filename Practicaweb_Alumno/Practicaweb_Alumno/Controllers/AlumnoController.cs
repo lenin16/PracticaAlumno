@@ -21,7 +21,7 @@ namespace Practicaweb_Alumno.Controllers
                                 on a.CodCiudad=c.Id
                                 where Edad>@EdadAlumno";*/
 
-               
+                int edad = 17;
                 using (BD_AlumnoEntities db = new BD_AlumnoEntities())
                 {
                     //List<Alumno> lista = db.Alumno.Where(a => a.Edad > 17).ToList();
@@ -31,7 +31,7 @@ namespace Practicaweb_Alumno.Controllers
                      var data = from a in db.Alumno
                                  join c in db.Ciudad
                                  on a.CodCiudad equals c.Id
-                                
+                                where a.Edad> edad
                                 select new AlumnoCE()
                                  {
                                      Id = a.Id,
